@@ -1,6 +1,6 @@
+import 'package:ava_flutter/app/router/app_router.dart';
 import 'package:ava_flutter/app/theme/text_theme.dart';
 import 'package:ava_flutter/app/theme/theme.dart';
-import 'package:ava_flutter/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class Ava extends StatelessWidget {
@@ -11,11 +11,11 @@ class Ava extends StatelessWidget {
     TextTheme textTheme = createTextTheme(context);
     AppTheme theme = AppTheme(textTheme);
 
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       darkTheme: theme.dark(),
       theme: theme.light(),
-      home: const HomePage(title: 'Flutter Demo Home Page'),
+      routerConfig: appRouter,
     );
   }
 }
