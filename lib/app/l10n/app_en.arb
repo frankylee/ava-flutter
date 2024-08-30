@@ -1,0 +1,29 @@
+{
+  "@@locale": "en",
+  "creditScore": "Credit Score",
+  "creditScoreProgress": "Credit Score Progress",
+  "home": "Home",
+  "nextCreditReportingOn": "Next {date}",
+  "@nextCreditReportingOn": {
+    "description": "Inform the user of their next expected credit reporting date.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pts": "pts",
+  "scoreOutOf850": "{score} out of 850",
+  "@scoreOutOf850": {
+    "description": "Inform the user of their current score out of the highest range.",
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "format": "compact",
+        "example": "720"
+      }
+    }
+  },
+  "today": "Today",
+  "updated": "Updated"
+}
