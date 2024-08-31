@@ -1,8 +1,10 @@
 {
   "@@locale": "en",
+  "chart": "Chart",
   "creditScore": "Credit Score",
   "creditScoreProgress": "Credit Score Progress",
   "home": "Home",
+  "last12Months": "Last 12 months",
   "nextCreditReportingOn": "Next {date}",
   "@nextCreditReportingOn": {
     "description": "Inform the user of their next expected credit reporting date.",
@@ -13,6 +15,16 @@
     }
   },
   "pts": "pts",
+  "scoreCalculatedUsing": "Score calculated using {calculatedBy}",
+  "@scoreCalculatedUsing": {
+    "description": "Inform the user of how their score was calculated.",
+    "placeholders": {
+      "calculatedBy": {
+        "type": "String",
+        "example": "VantageScore 3.0"
+      }
+    }
+  },
   "scoreOutOf850": "{score} out of 850",
   "@scoreOutOf850": {
     "description": "Inform the user of their current score out of the highest range.",

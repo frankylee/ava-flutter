@@ -1,3 +1,4 @@
+import 'package:ava_flutter/entities/credit_score/view/credit_score_chart_card.dart';
 import 'package:ava_flutter/entities/credit_score/view/credit_score_hero_card.dart';
 import 'package:ava_flutter/shared/extension/build_context_ext.dart';
 import 'package:ava_flutter/shared/ui/ava_app_bar.dart';
@@ -22,6 +23,16 @@ class _HomePageState extends ConsumerState<HomePage> {
       body: const Column(
         children: [
           CreditScoreHeroCard(),
+          SizedBox(height: 32.0),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CreditScoreChartCard(),
+              ],
+            ),
+          ),
         ],
       ),
     );
