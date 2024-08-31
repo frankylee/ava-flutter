@@ -1,5 +1,6 @@
 import 'package:ava_flutter/entities/credit_score/model/credit_score.dart';
 import 'package:ava_flutter/entities/credit_score/view/credit_score_progress.dart';
+import 'package:ava_flutter/entities/credit_score/view_model/credit_score_history_notifier.dart';
 import 'package:ava_flutter/entities/credit_score/view_model/credit_score_notifier.dart';
 import 'package:ava_flutter/shared/extension/build_context_ext.dart';
 import 'package:ava_flutter/shared/ui/hero_card.dart';
@@ -9,12 +10,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
 class CreditScoreHeroCard extends ConsumerWidget {
-  const CreditScoreHeroCard({
-    super.key,
-    required this.reportingAgency,
-  });
-
-  final String reportingAgency;
+  const CreditScoreHeroCard({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -31,10 +27,12 @@ class CreditScoreHeroCard extends ConsumerWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ref.watch(CreditScoreAsyncNotifier.provider).when(
+              ref.watch(CreditScoreHistoryAsyncNotifier.provider).when(
                     data: (data) => CreditScoreHeroHeaderData(
-                      creditScore: data,
-                      reportingAgency: reportingAgency,
+                      // We know that the history is sorted in reverse-chronological
+                      // order with the most recent reporting first.
+                      creditScore: data.history.first,
+                      reportingAgency: data.reportingAgency,
                     ),
                     error: (error, stackTrace) {
                       ref.invalidate(CreditScoreAsyncNotifier.provider);
