@@ -5,10 +5,12 @@ import 'package:shimmer/shimmer.dart';
 class ShimmerContainer extends StatelessWidget {
   const ShimmerContainer({
     super.key,
+    this.borderRadius,
     required this.height,
     required this.width,
   });
 
+  final double? borderRadius;
   final double height;
   final double width;
 
@@ -25,7 +27,7 @@ class ShimmerContainer extends StatelessWidget {
             decoration: ShapeDecoration(
               color: Colors.white,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(4.0),
+                borderRadius: BorderRadius.circular(borderRadius ?? 4.0),
               ),
             ),
           ),

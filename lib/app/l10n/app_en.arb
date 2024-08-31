@@ -1,9 +1,11 @@
 {
   "@@locale": "en",
   "chart": "Chart",
+  "creditFactors": "Credit Factors",
   "creditScore": "Credit Score",
   "creditScoreProgress": "Credit Score Progress",
   "home": "Home",
+  "impact": "IMPACT",
   "last12Months": "Last 12 months",
   "nextCreditReportingOn": "Next {date}",
   "@nextCreditReportingOn": {
