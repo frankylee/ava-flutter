@@ -58,9 +58,8 @@ class CreditScoreProgressData extends StatelessWidget {
           children: [
             Text(
               '${creditScore.score}',
-              style: const TextStyle(
+              style: context.textTheme.displaySmall?.copyWith(
                 fontSize: 36.0,
-                fontWeight: FontWeight.w600,
                 letterSpacing: -3,
                 height: 1.0,
               ),
