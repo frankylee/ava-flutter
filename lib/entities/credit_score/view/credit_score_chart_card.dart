@@ -28,7 +28,7 @@ class CreditScoreChartCard extends ConsumerWidget {
           decoration: ShapeDecoration(
             color: context.colors.onPrimary,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(24.0),
               side: BorderSide(color: context.colors.scrim.withOpacity(0.15)),
             ),
           ),

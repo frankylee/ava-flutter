@@ -14,7 +14,7 @@ class CreditScoreHeroCard extends StatelessWidget {
         decoration: ShapeDecoration(
           color: context.colors.onPrimary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.0),
+            borderRadius: BorderRadius.circular(20.0),
           ),
         ),
         child: const Padding(
