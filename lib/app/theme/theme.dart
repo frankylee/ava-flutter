@@ -91,6 +91,12 @@ class AppTheme {
                 borderRadius: BorderRadius.circular(12.0),
               ),
             ),
+            textStyle: WidgetStatePropertyAll(
+              textTheme.bodyLarge?.copyWith(
+                color: colorScheme.onPrimary,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
@@ -116,6 +122,12 @@ class AppTheme {
             ),
             side: WidgetStatePropertyAll(
               BorderSide(color: colorScheme.primary, width: 2.0),
+            ),
+            textStyle: WidgetStatePropertyAll(
+              textTheme.bodyLarge?.copyWith(
+                color: colorScheme.primary,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ),

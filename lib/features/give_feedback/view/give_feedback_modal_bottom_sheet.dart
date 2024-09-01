@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:ava_flutter/shared/extension/build_context_ext.dart';
+import 'package:ava_flutter/shared/ui/button/primary_filled_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -17,7 +18,6 @@ class GiveFeedbackModalBottomSheet extends StatefulWidget {
         context: context,
         backgroundColor: context.colors.onPrimaryFixedVariant,
         builder: (context) => const GiveFeedbackModalBottomSheet(),
-        isDismissible: false,
         isScrollControlled: true,
         useSafeArea: true,
       ),
@@ -96,18 +96,12 @@ class _GiveFeedbackModalBottomSheetState
                   maxLines: 8,
                 ),
                 const SizedBox(height: 12.0),
-                ElevatedButton(
+                PrimaryFilledButton(
+                  label: context.l10n.sendFeedback,
                   onPressed: () {
                     HapticFeedback.lightImpact();
                     context.pop();
                   },
-                  child: Text(
-                    context.l10n.sendFeedback,
-                    style: context.textTheme.bodyLarge?.copyWith(
-                      color: context.colors.onPrimary,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
                 ),
               ],
             ),
