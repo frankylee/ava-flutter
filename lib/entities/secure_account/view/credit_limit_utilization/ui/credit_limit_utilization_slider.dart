@@ -71,6 +71,7 @@ class _CreditLimitUtilizationSliderDataState
         ),
         const SizedBox(height: 12.0),
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
