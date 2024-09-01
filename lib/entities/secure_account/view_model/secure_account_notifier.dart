@@ -15,6 +15,7 @@ class SecureAccountAsyncNotifier extends AsyncNotifier<SecureAccount> {
     return const SecureAccount(
       balance: 30.0,
       creditLimit: 600.0,
+      quality: 'Excellent',
       spendLimit: 100.0,
       totalBalance: 8390.0,
       totalLimit: 200900.0,

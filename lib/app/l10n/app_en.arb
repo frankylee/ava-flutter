@@ -1,5 +1,6 @@
 {
   "@@locale": "en",
+  "accountDetails": "Account details",
   "amountValue": "{amount}",
   "@amountValue": {
     "description": "An amount to display in a simple currency format.",
@@ -32,6 +33,11 @@
       }
     }
   },
+  "percentage0to9": "0-9'%'",
+  "percentage10to29": "10-29'%'",
+  "percentage30to49": "30-49'%'",
+  "percentage50to74": "50-74'%'",
+  "percentage75Below": "'<'75'%'",
   "pts": "pts",
   "scoreCalculatedUsing": "Score calculated using {calculatedBy}",
   "@scoreCalculatedUsing": {
@@ -69,6 +75,8 @@
     }
   },
   "today": "Today",
+  "totalBalance": "Total balance':'",
+  "totalLimit": "Total limit':'",
   "updated": "Updated",
   "utilization": "Utilization",
   "whyIsItDifferent": "Why is it different?"

@@ -1,43 +1,42 @@
-import 'package:ava_flutter/entities/credit_score/model/credit_score.dart';
-import 'package:ava_flutter/entities/credit_score/view_model/credit_score_notifier.dart';
+import 'package:ava_flutter/entities/secure_account/model/secure_account.dart';
+import 'package:ava_flutter/entities/secure_account/view_model/secure_account_notifier.dart';
 import 'package:ava_flutter/shared/extension/build_context_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CreditScoreProgress extends ConsumerWidget {
-  const CreditScoreProgress({super.key});
+class TotalBalanceUtilizationProgress extends ConsumerWidget {
+  const TotalBalanceUtilizationProgress({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref.watch(CreditScoreAsyncNotifier.provider).when(
-          data: (data) => CreditScoreProgressData(creditScore: data),
+    return ref.watch(SecureAccountAsyncNotifier.provider).when(
+          data: (data) => TotalBalanceUtilizationProgressData(account: data),
           error: (error, stackTrace) => const SizedBox.shrink(),
-          loading: () => const CreditScoreProgressLoading(),
+          loading: () => const TotalBalanceUtilizationProgressLoading(),
         );
   }
 }
 
 @visibleForTesting
-class CreditScoreProgressData extends StatelessWidget {
-  const CreditScoreProgressData({
+class TotalBalanceUtilizationProgressData extends StatelessWidget {
+  const TotalBalanceUtilizationProgressData({
     super.key,
-    required this.creditScore,
+    required this.account,
   });
 
-  final CreditScore creditScore;
+  final SecureAccount account;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       children: [
-        Transform.flip(
-          flipX: true,
-          flipY: true,
+        Transform.rotate(
+          angle: 0.25,
           child: TweenAnimationBuilder<double>(
             tween: Tween<double>(
               begin: 0.0,
-              end: (creditScore.score - 500) / 350,
+              end: account.totalBalance / account.totalLimit,
             ),
             duration: const Duration(milliseconds: 1500),
             builder: (context, value, _) => SizedBox(
@@ -47,8 +46,8 @@ class CreditScoreProgressData extends StatelessWidget {
                 value: value,
                 backgroundColor: context.colors.secondaryContainer,
                 color: context.colors.secondary,
-                semanticsLabel: context.l10n.creditScoreProgress,
-                semanticsValue: context.l10n.scoreOutOf850(creditScore.score),
+                semanticsLabel: context.l10n.utilization,
+                semanticsValue: '${account.utilization}%',
                 strokeWidth: 6.0,
               ),
             ),
@@ -57,7 +56,7 @@ class CreditScoreProgressData extends StatelessWidget {
         Column(
           children: [
             Text(
-              '${creditScore.score}',
+              '${(account.utilization * 100).toInt()}%',
               style: context.textTheme.displaySmall?.copyWith(
                 fontSize: 36.0,
                 letterSpacing: -3,
@@ -65,7 +64,7 @@ class CreditScoreProgressData extends StatelessWidget {
               ),
             ),
             Text(
-              creditScore.quality,
+              account.quality,
               style: const TextStyle(
                 fontSize: 8.0,
                 fontWeight: FontWeight.w600,
@@ -80,8 +79,8 @@ class CreditScoreProgressData extends StatelessWidget {
 }
 
 @visibleForTesting
-class CreditScoreProgressLoading extends StatelessWidget {
-  const CreditScoreProgressLoading({super.key});
+class TotalBalanceUtilizationProgressLoading extends StatelessWidget {
+  const TotalBalanceUtilizationProgressLoading({super.key});
 
   @override
   Widget build(BuildContext context) {

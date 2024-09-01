@@ -4,6 +4,7 @@ class SecureAccount implements Equatable {
   const SecureAccount({
     required this.balance,
     required this.creditLimit,
+    required this.quality,
     required this.spendLimit,
     required this.totalBalance,
     required this.totalLimit,
@@ -12,6 +13,7 @@ class SecureAccount implements Equatable {
 
   final double balance;
   final double creditLimit;
+  final String quality;
   final double spendLimit;
   final double totalBalance;
   final double totalLimit;
@@ -21,6 +23,7 @@ class SecureAccount implements Equatable {
   List<Object?> get props => [
         balance,
         creditLimit,
+        quality,
         spendLimit,
         totalBalance,
         totalLimit,
