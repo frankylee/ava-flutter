@@ -1,5 +1,6 @@
 import 'package:ava_flutter/app/router/app_routes.dart';
 import 'package:ava_flutter/pages/home/home_page.dart';
+import 'package:ava_flutter/pages/settings/settings_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -20,5 +21,14 @@ final _routes = [
     pageBuilder: (context, state) => const MaterialPage(
       child: HomePage(),
     ),
+    routes: [
+      GoRoute(
+        name: AppRoute.settings.name,
+        path: AppRoute.settings.path,
+        pageBuilder: (context, state) => const MaterialPage(
+          child: SettingsPage(),
+        ),
+      ),
+    ],
   ),
 ];

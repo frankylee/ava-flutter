@@ -2,7 +2,7 @@
 
 enum AppRoute {
   home(''),
-  settings('settings');
+  settings('settings', parent: AppRoute.home);
 
   const AppRoute(this._path, {this.parent});
 
