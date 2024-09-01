@@ -59,7 +59,6 @@ class TotalBalanceUtilizationProgressData extends StatelessWidget {
               '${(account.utilization * 100).toInt()}%',
               style: context.textTheme.displaySmall?.copyWith(
                 fontSize: 36.0,
-                letterSpacing: -3,
                 height: 1.0,
               ),
             ),
