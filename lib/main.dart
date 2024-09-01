@@ -1,14 +1,17 @@
 import 'dart:developer';
 
 import 'package:ava_flutter/app/ava.dart';
+import 'package:ava_flutter/shared/local_storage/model/local_storage_key.enum.dart';
+import 'package:ava_flutter/shared/local_storage/view_model/shared_preferences_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:logging/logging.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Initialize the Logging package.
@@ -46,10 +49,31 @@ void main() {
     DeviceOrientation.portraitDown,
   ]);
 
+  // Initialize SharedPreferences.
+  final sharedPreferences = await SharedPreferencesWithCache.create(
+    cacheOptions: SharedPreferencesWithCacheOptions(
+      allowList: <String>{
+        LocalStorageKey.employer.value,
+        LocalStorageKey.employerAddress.value,
+        LocalStorageKey.employmentDurationMonth.value,
+        LocalStorageKey.employmentDurationYear.value,
+        LocalStorageKey.employmentType.value,
+        LocalStorageKey.grossAnnual.value,
+        LocalStorageKey.isDirectDeposit.value,
+        LocalStorageKey.jobTitle.value,
+        LocalStorageKey.nextPayDate.value,
+        LocalStorageKey.payFrequency.value,
+      },
+    ),
+  );
+
   // Run application with Riverpod by wrapping the app in ProviderScope.
   runApp(
-    const ProviderScope(
-      child: Ava(),
+    ProviderScope(
+      overrides: [
+        sharedPreferencesProvider.overrideWithValue(sharedPreferences),
+      ],
+      child: const Ava(),
     ),
   );
 }
