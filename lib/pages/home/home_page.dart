@@ -22,18 +22,20 @@ class _HomePageState extends ConsumerState<HomePage> {
         leading: const Icon(Icons.settings_outlined),
         title: context.l10n.home,
       ),
-      body: const SingleChildScrollView(
-        padding: EdgeInsets.only(bottom: 100.0),
-        child: Column(
-          children: [
-            CreditScoreHeroCard(),
-            SizedBox(height: 32.0),
-            CreditScoreChartCard(),
-            SizedBox(height: 32.0),
-            CreditFactorCards(),
-            SizedBox(height: 32.0),
-            SecureAccountDetails(),
-          ],
+      body: const SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.only(bottom: 100.0),
+          child: Column(
+            children: [
+              CreditScoreHeroCard(),
+              SizedBox(height: 32.0),
+              CreditScoreChartCard(),
+              SizedBox(height: 32.0),
+              CreditFactorCards(),
+              SizedBox(height: 32.0),
+              SecureAccountDetails(),
+            ],
+          ),
         ),
       ),
     );
