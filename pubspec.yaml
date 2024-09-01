@@ -33,13 +33,11 @@ flutter:
   fonts:
     - family: AtHauss
       fonts:
-        - asset: fonts/AtHaussTRIAL-Medium.otf
-          weight: 400
         - asset: fonts/AtHaussTRIAL-Regular.otf
-          weight: 500
-        - asset: fonts/AtHaussTRIAL-SemiBold.otf
+          weight: 400
+        - asset: fonts/AtHaussTRIAL-Semibold.otf
           weight: 600
-    - family: AtSlamCnd
+    - family: AtSlam
       fonts:
-        - asset: fonts/AtSlamCnd-SemiBold.otf
+        - asset: fonts/AtSlamCnd-Semibold.otf
           weight: 600

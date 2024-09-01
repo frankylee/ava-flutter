@@ -1,3 +1,4 @@
+import 'package:ava_flutter/entities/credit_card/view/credit_accounts_card.dart';
 import 'package:ava_flutter/entities/credit_factors/view/credit_factor_cards.dart';
 import 'package:ava_flutter/entities/credit_score/view/credit_score_chart_card.dart';
 import 'package:ava_flutter/entities/credit_score/view/credit_score_hero_card.dart';
@@ -34,6 +35,8 @@ class _HomePageState extends ConsumerState<HomePage> {
               CreditFactorCards(),
               SizedBox(height: 32.0),
               SecureAccountDetails(),
+              SizedBox(height: 32.0),
+              CreditAccountsCard(),
             ],
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:ava_flutter/entities/credit_factors/model/credit_factor_impact.enum.dart';
 import 'package:ava_flutter/shared/extension/build_context_ext.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CreditFactorImpactButton extends StatelessWidget {
   const CreditFactorImpactButton({
@@ -23,7 +24,7 @@ class CreditFactorImpactButton extends StatelessWidget {
       textColor = context.colors.onSecondaryFixedVariant;
     }
     return TextButton(
-      onPressed: () {},
+      onPressed: () => HapticFeedback.lightImpact(),
       style: ButtonStyle(
         backgroundColor: WidgetStatePropertyAll(backgroundColor),
         shape: WidgetStatePropertyAll(

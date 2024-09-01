@@ -1,6 +1,34 @@
 {
   "@@locale": "en",
   "accountDetails": "Account details",
+  "amountBalance": "{amount} Balance",
+  "@amountBalance": {
+    "description": "The balance amount of a user's card.",
+    "placeholders": {
+      "amount": {
+        "type": "int",
+        "format": "simpleCurrency",
+        "example": "1500",
+        "optionalParameters": {
+          "decimalDigits": 0
+        }
+      }
+    }
+  },
+  "amountLimit": "{amount} Limit",
+  "@amountLimit": {
+    "description": "The credit limit amount of a user's card.",
+    "placeholders": {
+      "amount": {
+        "type": "int",
+        "format": "simpleCurrency",
+        "example": "6300",
+        "optionalParameters": {
+          "decimalDigits": 0
+        }
+      }
+    }
+  },
   "amountValue": "{amount}",
   "@amountValue": {
     "description": "An amount to display in a simple currency format.",
@@ -33,12 +61,23 @@
       }
     }
   },
+  "openCreditCardAccounts": "Open credit card accounts",
   "percentage0to9": "0-9'%'",
   "percentage10to29": "10-29'%'",
   "percentage30to49": "30-49'%'",
   "percentage50to74": "50-74'%'",
   "percentage75Below": "'<'75'%'",
   "pts": "pts",
+  "reportedOn": "Reported on {date}",
+  "@reportedOn": {
+    "description": "Inform the user of the last credit card reporting date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "June 20, 2023"
+      }
+    }
+  },
   "scoreCalculatedUsing": "Score calculated using {calculatedBy}",
   "@scoreCalculatedUsing": {
     "description": "Inform the user of how their score was calculated.",

@@ -60,6 +60,7 @@ class CreditScoreProgressData extends StatelessWidget {
               '${creditScore.score}',
               style: context.textTheme.displaySmall?.copyWith(
                 fontSize: 36.0,
+                fontFamily: 'Garamond',
                 letterSpacing: -3,
                 height: 1.0,
               ),

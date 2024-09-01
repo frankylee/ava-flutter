@@ -71,6 +71,11 @@ class AppTheme {
           displayColor: colorScheme.onSurface,
         ),
         useMaterial3: true,
+        progressIndicatorTheme: ProgressIndicatorThemeData(
+          color: colorScheme.secondary,
+          linearMinHeight: 8.0,
+          linearTrackColor: colorScheme.scrim.withOpacity(0.15),
+        ),
         sliderTheme: SliderThemeData(
           activeTickMarkColor: Colors.transparent,
           activeTrackColor: colorScheme.secondaryContainer,
