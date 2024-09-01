@@ -45,10 +45,14 @@
   },
   "balance": "Balance",
   "chart": "Chart",
+  "confirm": "Confirm",
+  "confirmYourEmployment": "Confirm your employment",
   "creditFactors": "Credit Factors",
   "creditLimit": "Credit limit",
   "creditScore": "Credit Score",
   "creditScoreProgress": "Credit Score Progress",
+  "edit": "Edit",
+  "giveUsFeedback": "Give us feedback",
   "home": "Home",
   "impact": "IMPACT",
   "last12Months": "Last 12 months",
@@ -78,6 +82,7 @@
       }
     }
   },
+  "reviewAndConfirmEmploymentDetailsSubtitle": "Please review and confirm the below employment details are up-to-date.",
   "scoreCalculatedUsing": "Score calculated using {calculatedBy}",
   "@scoreCalculatedUsing": {
     "description": "Inform the user of how their score was calculated.",
@@ -99,6 +104,7 @@
       }
     }
   },
+  "sendFeedback": "Send feedback",
   "spendLimit": "Spend Limit':' {amount}",
   "@spendLimit": {
     "description": "The amount a user can spend on their secure card.",

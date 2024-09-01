@@ -71,6 +71,54 @@ class AppTheme {
           displayColor: colorScheme.onSurface,
         ),
         useMaterial3: true,
+        bottomSheetTheme: BottomSheetThemeData(
+          dragHandleColor: colorScheme.onPrimaryFixedVariant,
+          dragHandleSize: const Size(0.0, 0.0),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: WidgetStatePropertyAll(colorScheme.primary),
+            elevation: const WidgetStatePropertyAll(0),
+            enableFeedback: true,
+            foregroundColor: WidgetStatePropertyAll(colorScheme.onPrimary),
+            minimumSize: const WidgetStatePropertyAll(
+              Size(double.maxFinite, 44.0),
+            ),
+            overlayColor:
+                WidgetStatePropertyAll(colorScheme.onSurface.withOpacity(0.15)),
+            shape: WidgetStatePropertyAll(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+            ),
+          ),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          border: MaterialStateOutlineInputBorder.resolveWith(
+            (states) => OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+              borderSide: BorderSide(color: colorScheme.outlineVariant),
+            ),
+          ),
+          fillColor: colorScheme.onPrimary,
+          filled: true,
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: ButtonStyle(
+            enableFeedback: true,
+            minimumSize: const WidgetStatePropertyAll(
+              Size(double.maxFinite, 44.0),
+            ),
+            shape: WidgetStatePropertyAll(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+            ),
+            side: WidgetStatePropertyAll(
+              BorderSide(color: colorScheme.primary, width: 2.0),
+            ),
+          ),
+        ),
         progressIndicatorTheme: ProgressIndicatorThemeData(
           color: colorScheme.secondary,
           linearMinHeight: 8.0,
