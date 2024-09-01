@@ -12,43 +12,46 @@ class CreditScoreChartCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 12.0),
-          child: Text(
-            context.l10n.chart,
-            style: context.textTheme.titleLarge
-                ?.copyWith(fontWeight: FontWeight.w600),
-          ),
-        ),
-        const SizedBox(height: 16.0),
-        Container(
-          decoration: ShapeDecoration(
-            color: context.colors.onPrimary,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24.0),
-              side: BorderSide(color: context.colors.scrim.withOpacity(0.15)),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 12.0),
+            child: Text(
+              context.l10n.chart,
+              style: context.textTheme.titleLarge
+                  ?.copyWith(fontWeight: FontWeight.w600),
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const CreditScoreCardHeader(),
-                const SizedBox(height: 20.0),
-                ref.watch(CreditScoreHistoryAsyncNotifier.provider).when(
-                      data: (data) => CreditScoreChartCardData(history: data),
-                      error: (error, stackTrace) => const SizedBox.shrink(),
-                      loading: () => const CreditScoreChartCardLoading(),
-                    ),
-              ],
+          const SizedBox(height: 16.0),
+          Container(
+            decoration: ShapeDecoration(
+              color: context.colors.onPrimary,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24.0),
+                side: BorderSide(color: context.colors.scrim.withOpacity(0.15)),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const CreditScoreCardHeader(),
+                  const SizedBox(height: 20.0),
+                  ref.watch(CreditScoreHistoryAsyncNotifier.provider).when(
+                        data: (data) => CreditScoreChartCardData(history: data),
+                        error: (error, stackTrace) => const SizedBox.shrink(),
+                        loading: () => const CreditScoreChartCardLoading(),
+                      ),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

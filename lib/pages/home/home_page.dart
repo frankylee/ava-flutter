@@ -1,6 +1,7 @@
 import 'package:ava_flutter/entities/credit_factors/view/credit_factor_cards.dart';
 import 'package:ava_flutter/entities/credit_score/view/credit_score_chart_card.dart';
 import 'package:ava_flutter/entities/credit_score/view/credit_score_hero_card.dart';
+import 'package:ava_flutter/entities/secure_account/view/secure_account_details.dart';
 import 'package:ava_flutter/shared/extension/build_context_ext.dart';
 import 'package:ava_flutter/shared/ui/ava_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -22,16 +23,16 @@ class _HomePageState extends ConsumerState<HomePage> {
         title: context.l10n.home,
       ),
       body: const SingleChildScrollView(
+        padding: EdgeInsets.only(bottom: 100.0),
         child: Column(
           children: [
             CreditScoreHeroCard(),
             SizedBox(height: 32.0),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: CreditScoreChartCard(),
-            ),
+            CreditScoreChartCard(),
             SizedBox(height: 32.0),
             CreditFactorCards(),
+            SizedBox(height: 32.0),
+            SecureAccountDetails(),
           ],
         ),
       ),

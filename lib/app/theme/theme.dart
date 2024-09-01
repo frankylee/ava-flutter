@@ -1,3 +1,4 @@
+import 'package:ava_flutter/app/theme/rect_slider_thumb_shape.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
@@ -61,15 +62,30 @@ class AppTheme {
   }
 
   ThemeData theme(ColorScheme colorScheme) => ThemeData(
-        useMaterial3: true,
         brightness: colorScheme.brightness,
+        canvasColor: colorScheme.surface,
         colorScheme: colorScheme,
+        scaffoldBackgroundColor: colorScheme.surface,
         textTheme: textTheme.apply(
           bodyColor: colorScheme.onSurface,
           displayColor: colorScheme.onSurface,
         ),
-        scaffoldBackgroundColor: colorScheme.surface,
-        canvasColor: colorScheme.surface,
+        useMaterial3: true,
+        sliderTheme: SliderThemeData(
+          activeTickMarkColor: colorScheme.secondary,
+          activeTrackColor: colorScheme.secondaryContainer,
+          inactiveTickMarkColor: colorScheme.secondary,
+          inactiveTrackColor: colorScheme.secondaryContainer,
+          overlayShape: SliderComponentShape.noThumb,
+          secondaryActiveTrackColor: colorScheme.secondary,
+          showValueIndicator: ShowValueIndicator.always,
+          thumbColor: colorScheme.secondary,
+          thumbShape: const RectSliderThumbShape(height: 8.0, width: 4.0),
+          trackHeight: 8.0,
+          trackShape: const RectangularSliderTrackShape(),
+          valueIndicatorColor: colorScheme.primary,
+          valueIndicatorShape: const RectangularSliderValueIndicatorShape(),
+        ),
       );
 
   List<ExtendedColor> get extendedColors => [];

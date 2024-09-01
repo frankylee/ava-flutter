@@ -1,7 +1,23 @@
 {
   "@@locale": "en",
+  "amountValue": "{amount}",
+  "@amountValue": {
+    "description": "An amount to display in a simple currency format.",
+    "placeholders": {
+      "amount": {
+        "type": "int",
+        "format": "simpleCurrency",
+        "example": "100",
+        "optionalParameters": {
+          "decimalDigits": 0
+        }
+      }
+    }
+  },
+  "balance": "Balance",
   "chart": "Chart",
   "creditFactors": "Credit Factors",
+  "creditLimit": "Credit limit",
   "creditScore": "Credit Score",
   "creditScoreProgress": "Credit Score Progress",
   "home": "Home",
@@ -38,6 +54,22 @@
       }
     }
   },
+  "spendLimit": "Spend Limit':' {amount}",
+  "@spendLimit": {
+    "description": "The amount a user can spend on their secure card.",
+    "placeholders": {
+      "amount": {
+        "type": "int",
+        "format": "simpleCurrency",
+        "example": "100",
+        "optionalParameters": {
+          "decimalDigits": 0
+        }
+      }
+    }
+  },
   "today": "Today",
-  "updated": "Updated"
+  "updated": "Updated",
+  "utilization": "Utilization",
+  "whyIsItDifferent": "Why is it different?"
 }
