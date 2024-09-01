@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:ava_flutter/app/ava.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:logging/logging.dart';
@@ -38,6 +39,12 @@ void main() {
     logger.severe('[Platform Dispatcher Error] $error', error, stack);
     return true;
   };
+
+  // Lock the app to using only portrait modes.
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
 
   // Run application with Riverpod by wrapping the app in ProviderScope.
   runApp(
