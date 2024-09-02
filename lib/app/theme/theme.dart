@@ -75,6 +75,41 @@ class AppTheme {
           dragHandleColor: colorScheme.onPrimaryFixedVariant,
           dragHandleSize: const Size(0.0, 0.0),
         ),
+        dropdownMenuTheme: DropdownMenuThemeData(
+          inputDecorationTheme: InputDecorationTheme(
+            border: MaterialStateOutlineInputBorder.resolveWith(
+              (states) => OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12.0),
+                borderSide: BorderSide(
+                  color: states.contains(WidgetState.disabled)
+                      ? colorScheme.surface
+                      : colorScheme.outlineVariant,
+                ),
+              ),
+            ),
+            fillColor: WidgetStateColor.resolveWith((states) {
+              return states.contains(WidgetState.disabled)
+                  ? colorScheme.surface
+                  : colorScheme.onPrimary;
+            }),
+            filled: true,
+            isDense: true,
+            labelStyle: WidgetStateTextStyle.resolveWith((states) {
+              return const TextStyle().merge(
+                textTheme.bodyLarge?.copyWith(color: colorScheme.onSurface),
+              );
+            }),
+          ),
+          menuStyle: MenuStyle(
+            backgroundColor: WidgetStatePropertyAll(colorScheme.onPrimary),
+            elevation: const WidgetStatePropertyAll(2),
+            shape: WidgetStatePropertyAll(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+            ),
+          ),
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
             backgroundColor: WidgetStatePropertyAll(colorScheme.primary),
@@ -103,11 +138,25 @@ class AppTheme {
           border: MaterialStateOutlineInputBorder.resolveWith(
             (states) => OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.0),
-              borderSide: BorderSide(color: colorScheme.outlineVariant),
+              borderSide: BorderSide(
+                color: states.contains(WidgetState.disabled)
+                    ? colorScheme.surface
+                    : colorScheme.outlineVariant,
+              ),
             ),
           ),
-          fillColor: colorScheme.onPrimary,
+          fillColor: WidgetStateColor.resolveWith((states) {
+            return states.contains(WidgetState.disabled)
+                ? colorScheme.surface
+                : colorScheme.onPrimary;
+          }),
           filled: true,
+          isDense: true,
+          labelStyle: WidgetStateTextStyle.resolveWith((states) {
+            return const TextStyle().merge(
+              textTheme.bodyLarge?.copyWith(color: colorScheme.onSurface),
+            );
+          }),
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: ButtonStyle(

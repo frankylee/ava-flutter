@@ -53,10 +53,32 @@
   "creditScore": "Credit Score",
   "creditScoreProgress": "Credit Score Progress",
   "edit": "Edit",
+  "editEmploymentInfo": "Edit employment information",
+  "employer": "Employer",
+  "employerAddress": "Employer address",
+  "employmentType": "Employment type",
   "giveUsFeedback": "Give us feedback",
+  "grossAnnualIncomeLabel": "Gross annual income",
+  "grossAnnualIncome": "{income}/year",
+  "@grossAnnualIncome": {
+    "description": "The amount a user earns in one year.",
+    "placeholders": {
+      "income": {
+        "type": "int",
+        "format": "simpleCurrency",
+        "example": "100",
+        "optionalParameters": {
+          "decimalDigits": 0
+        }
+      }
+    }
+  },
   "home": "Home",
   "impact": "IMPACT",
+  "isYourPayDirectDeposit": "Is your pay a direct deposit?",
+  "jobTitle": "Job title",
   "last12Months": "Last 12 months",
+  "myNextPaydayIs": "My next payday is",
   "nextCreditReportingOn": "Next {date}",
   "@nextCreditReportingOn": {
     "description": "Inform the user of their next expected credit reporting date.",
@@ -66,7 +88,9 @@
       }
     }
   },
+  "no": "No",
   "openCreditCardAccounts": "Open credit card accounts",
+  "payFrequency": "Pay frequency",
   "percentage0to9": "0-9'%'",
   "percentage10to29": "10-29'%'",
   "percentage30to49": "30-49'%'",
@@ -120,10 +144,17 @@
       }
     }
   },
+  "timeWithEmployer": "Time with employer",
   "today": "Today",
   "totalBalance": "Total balance':'",
   "totalLimit": "Total limit':'",
   "updated": "Updated",
   "utilization": "Utilization",
-  "whyIsItDifferent": "Why is it different?"
+  "validateEmployer": "Please enter an employer.",
+  "validateEmployerAddress": "Please enter the address of your employer.",
+  "validateGrossAnnual": "Please enter a gross annual salary.",
+  "validateJobTitle": "Please enter a job title.",
+  "validateNextPayDate": "Please enter the date of your next paycheck.",
+  "whyIsItDifferent": "Why is it different?",
+  "yes": "Yes"
 }
