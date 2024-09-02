@@ -17,7 +17,71 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Setup
 
-Be sure to run `flutter gen-l10n` or `sh scripts/setup.sh` to generate the localization files.
+### Localization
+
+Be sure to run `flutter gen-l10n` to generate the localization files.
+
+---
+
+## Architecture
+
+This project uses a combination of Feature-Sliced Design and MVVM. Feature-Sliced Design can be illustrated by the graphic below:
+
+<img src="https://feature-sliced.design/assets/ideal-img/visual_schema.b6c18f6.1030.jpg" />
+
+To learn more about FSD, please view [Feature-Sliced Design website](https://feature-sliced.design/).
+
+### Folder structure
+
+```
+|-- android/
+|-- fonts/
+|-- ios/
+|-- lib/
+|   |-- app/                    # FSD layer where all app-level configs live.
+|   |   |-- l10n/
+|   |   |-- router/
+|   |   |-- theme/
+|   |   |-- ava.dart
+|   |-- entities/               # FSD layer where all business models live.
+|   |   |-- credit_card/
+|   |   |   |-- model/
+|   |   |   |-- view/
+|   |   |   |-- view_model/
+|   |   |-- credit_factors/
+|   |   |   |-- model/
+|   |   |   |-- view/
+|   |   |   |-- view_model/
+|   |   |-- credit_score/
+|   |   |   |-- model/
+|   |   |   |-- view/
+|   |   |   |-- view_model/
+|   |   |-- employment/
+|   |   |   |-- model/
+|   |   |   |-- view/
+|   |   |   |-- view_model/
+|   |   |-- secure_account/
+|   |   |   |-- model/
+|   |   |   |-- view/
+|   |   |   |-- view_model/
+|   |-- features/               # FSD layer where all features live.
+|   |   |-- give_feedback/
+|   |   |   |-- view/
+|   |   |   |-- view_model/
+|   |-- pages/                  # FSD layer where all route-level pages live.
+|   |   |-- home/
+|   |   |   |-- home_page.dart
+|   |   |-- settings/
+|   |   |   |-- view/
+|   |   |   |-- settings_page.dart
+|   |-- shared/
+|   |   |-- extension/         # Extensions.
+|   |   |-- local_storage/     # Shared Preferences and local storage logic.
+|   |   |-- mixin/             # Mixins.
+|   |   |-- ui/                # Generic shared widgets.
+|-- scripts/
+|-- test/
+```
 
 ---
 
