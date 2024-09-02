@@ -89,11 +89,11 @@ class _GiveFeedbackModalBottomSheetState
                     ),
                   ],
                 ),
-                const SizedBox(height: 24.0),
+                const SizedBox(height: 16.0),
                 TextField(
                   autofocus: true,
                   controller: _controller,
-                  maxLines: 8,
+                  maxLines: 6,
                 ),
                 const SizedBox(height: 12.0),
                 PrimaryFilledButton(
